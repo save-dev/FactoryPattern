@@ -1,7 +1,8 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 using System.IO;
 using System.Text;
-using IronXL;
+using Microsoft.Office.Interop.Excel;
 
 namespace FactoryPattern
 {
@@ -23,13 +24,9 @@ namespace FactoryPattern
     {
         public override CustomFile CreateFile(string fullPath)
         {
-            var workbook = WorkBook.Create(ExcelFileFormat.XLSX);
-            workbook.CreateWorkSheet("");
-            workbook.CreateWorkSheet("");
-            workbook.CreateWorkSheet("");
-            workbook.CreateWorkSheet("");
-            workbook.CreateWorkSheet("");
-            workbook.SaveAs(fullPath);
+            var excelApp = new Application {Visible = true, SheetsInNewWorkbook = 5};
+            var workBook = excelApp.Workbooks.Add(Type.Missing);
+            workBook.SaveAs(fullPath);
             return new XLSXFile();
         }
     }

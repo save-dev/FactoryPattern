@@ -67,8 +67,7 @@ namespace FactoryPattern
         private void Restart()
         {
             Console.WriteLine("Restarting...");
-            Thread.Sleep(8000);
-            Console.Clear();
+            Thread.Sleep(2000);
             Program.Main();
         }
     }
