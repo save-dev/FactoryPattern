@@ -60,8 +60,8 @@ namespace FactoryPattern
                     break;
             }
 
-            var createdFile = newFile?.CreateFile(fullPath);
-            createdFile?.ShowStatus();
+            newFile?.CreateFile(fullPath);
+            Console.WriteLine($"Successfully created a {ext} file");
         }
 
         private void Restart()

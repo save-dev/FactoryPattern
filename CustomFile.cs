@@ -9,16 +9,16 @@ namespace FactoryPattern
 
     internal class TXTFile : CustomFile
     {
-        public override void ShowStatus() { Console.WriteLine("Created an empty txt file"); }
+        public override void ShowStatus() {}
     }
 
-    internal class XLSXFile : CustomFile // дублируется метод done typeOf
+    internal class XLSXFile : CustomFile
     {
-        public override void ShowStatus() { Console.WriteLine("Created an empty excel file"); }
+        public override void ShowStatus() {}
     }
 
     internal class PNGFile : CustomFile
     {
-        public override void ShowStatus() { Console.WriteLine("created an empty png file"); }
+        public override void ShowStatus() {}
     }
 }
