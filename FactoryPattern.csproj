@@ -50,7 +50,7 @@
     </ItemGroup>
     <ItemGroup>
         <Compile Include="CustomFile.cs" />
-        <Compile Include="FileFactories.cs" />
+        <Compile Include="BaseCreator.cs" />
         <Compile Include="FileManager.cs" />
         <Compile Include="Program.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />

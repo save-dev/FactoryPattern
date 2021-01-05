@@ -42,17 +42,17 @@ namespace FactoryPattern
         {
             Console.WriteLine(File.Exists(fullPath) ? $"\nOverwriting file... {fullPath}" : $"\nCreating empty file... {fullPath}");
 
-            FileFactories newFile = null;
+            BaseCreator creator = null;
             switch (ext)
             {
                 case "txt":
-                    newFile = new TXTCreator();
+                    creator = new TXTCreator();
                     break;
                 case "xlsx":
-                    newFile = new XLSXCreator();
+                    creator = new XLSXCreator();
                     break;
                 case "png":
-                    newFile = new PNGCreator();
+                    creator = new PNGCreator();
                     break;
                 default:
                     Console.WriteLine("Bad extension");
@@ -60,7 +60,7 @@ namespace FactoryPattern
                     break;
             }
 
-            newFile?.CreateFile(fullPath);
+            creator?.CreateFile(fullPath);
             Console.WriteLine($"Successfully created a {ext} file");
         }
 
