@@ -19,7 +19,7 @@ namespace FactoryPattern
         protected override void ShowProperties()
         {
             base.ShowProperties();
-            Console.WriteLine(Encoding);
+            Console.WriteLine($"Encoding = {Encoding}");
         }
     }
 
@@ -32,7 +32,7 @@ namespace FactoryPattern
         protected override void ShowProperties()
         {
             base.ShowProperties();
-            Console.WriteLine(SheetCount);
+            Console.WriteLine($"Sheet count = {SheetCount}");
         }
     }
 
